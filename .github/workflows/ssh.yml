@@ -7,12 +7,11 @@ defaults:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-18.04
     steps:
-      - name: Start SSH via tmate
-        uses: P3TERX/ssh2actions@main
-  # Send connection info to Telegram (optional)
-  # You can find related documents here: https://core.telegram.org/bots
-        env:
-          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+    - uses: actions/checkout@v2
+    - run: source kernel.sh
+      env:
+        TG_TOKEN: ${{ secrets.TG_TOKEN }}
+        TG_CHAT_ID: ${{ secrets.TG_CHAT_ID }}
+        BRANCH: ${{ secrets.BRANCH }}
