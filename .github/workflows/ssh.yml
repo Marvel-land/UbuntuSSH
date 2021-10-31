@@ -9,10 +9,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Start SSH via tmate
-        uses: P3TERX/ssh2actions@main
-  # Send connection info to Telegram (optional)
-  # You can find related documents here: https://core.telegram.org/bots
-        env:
-          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+    - uses: rokibhasansagar/slimhub_actions@main
+    - name: Setup tmate session
+      uses: mxschmitt/action-tmate@master
