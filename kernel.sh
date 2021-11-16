@@ -1,4 +1,4 @@
-git clone https://github.com/MarvelMathesh/kernel-test-2 -b $BRANCH kernel --depth 1 && cd kernel
+git clone https://github.com/MarvelMathesh/MK-4.9-WIP -b $BRANCH kernel --depth 1 && cd kernel
 
 sudo apt install ccache
 export USE_CCACHE=1 && export CCACHE_EXEC=/usr/bin/ccache && ccache -M 5G && export CCACHE_COMPRESS=1
